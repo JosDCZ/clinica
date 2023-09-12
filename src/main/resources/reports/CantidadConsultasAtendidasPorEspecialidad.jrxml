@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.5.final using JasperReports Library version 6.20.5-3efcf2e67f959db3888d79f73dde2dbd7acb4f8e  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CantidadConsultasAtendidasPorEspecialidad" pageWidth="792" pageHeight="612" orientation="Landscape" columnWidth="752" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="bb1507da-558b-4d6e-8b25-642dc2948876">
+	<property name="com.jaspersoft.studio.data.sql.tables">
+		<![CDATA[Y29uc3VsdGEgLDEyNywxNSw0ODJiYzYzZS1lOWIxLTQyMzctOWIyMS0yNzgyZTBmZjA3ZjM7ZXNw
+ZWNpYWxpZGFkICwxNSwxNSw0ZTY4MWZiZC1iMDI1LTRhZDQtYjI3MS00Mjg4NjgxZDAzZTk7]]>
+	</property>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DataAdapterClinica"/>
+
+	<parameter name="ImgLogo" class="java.io.InputStream"/>
+
+	<queryString language="SQL">
+	</queryString>
+	<field name="nombreEspecialidad" class="java.lang.String"/>
+	<field name="cantidadConsultaPorEspecialidad" class="java.lang.Long"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="81" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="750" height="81" forecolor="#006699" backcolor="#006699" uuid="fa7fc181-6de4-4704-bd31-289bcf07945f"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="0" width="279" height="30" forecolor="#FFFFFF" uuid="e78f57f2-d04b-43da-ac1f-fd0f1b17d136"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Clinica Medica Bienestar Universitario]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="50" width="750" height="30" forecolor="#FFFFFF" uuid="ed62827c-1be3-43a8-b1ae-7719116923d9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Final avinidad Cresencio Castellanos contigo a Cruz Roja]]></text>
+			</staticText>
+			<image>
+				<reportElement x="690" y="15" width="50" height="50" uuid="d8433998-4479-451f-a51e-87fe289102a3"/>
+				<imageExpression><![CDATA[$P{ImgLogo}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="2" width="750" height="30" forecolor="#030000" uuid="d9e08094-2fb2-4686-ac10-0a7a9e07f6fa"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Reporte de consultas por especialidad medica]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="34" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="380" height="30" uuid="664a332a-de34-46b9-8d24-54ab7b36934c"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Identificacion]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="380" y="0" width="368" height="30" uuid="c21e0321-1819-494a-887b-d6ad35204876"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Paciente]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="42" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="380" height="30" uuid="3c168994-2350-49d9-aab9-f911dd5c8dfc"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombreEspecialidad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="380" y="0" width="373" height="30" uuid="3ec53de7-b21a-40d5-8518-4b5a6da2e752"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cantidadConsultaPorEspecialidad}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="37" splitType="Stretch">
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="1" y="6" width="100" height="30" uuid="489943e8-b6b6-436f-94c4-f3146745c887"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField pattern="HH:mm">
+				<reportElement x="250" y="6" width="100" height="30" uuid="505088c0-e391-4be0-91a6-c739584799bd"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="550" y="6" width="100" height="30" uuid="057b0e84-49f6-4139-a4d2-42a9ac031da3"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="650" y="6" width="100" height="30" uuid="8bf63afb-62f2-4639-a5ad-1bbc6b04091b"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[" of " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="189" splitType="Stretch">
+			<bar3DChart>
+				<chart evaluationTime="Report">
+					<reportElement x="0" y="0" width="752" height="188" uuid="1fb6b8d7-633d-4b7e-8662-7d285732ecd0"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<categoryDataset>
+					<categorySeries>
+						<seriesExpression><![CDATA[$F{nombreEspecialidad}]]></seriesExpression>
+						<categoryExpression><![CDATA[0]]></categoryExpression>
+						<valueExpression><![CDATA[$F{cantidadConsultaPorEspecialidad}]]></valueExpression>
+						<labelExpression><![CDATA[$F{nombreEspecialidad}]]></labelExpression>
+					</categorySeries>
+				</categoryDataset>
+				<bar3DPlot>
+					<plot/>
+					<itemLabel/>
+					<categoryAxisFormat>
+						<axisFormat labelColor="#000000" tickLabelColor="#000000" axisLineColor="#000000"/>
+					</categoryAxisFormat>
+					<valueAxisFormat>
+						<axisFormat labelColor="#000000" tickLabelColor="#000000" axisLineColor="#000000"/>
+					</valueAxisFormat>
+				</bar3DPlot>
+			</bar3DChart>
+		</band>
+	</summary>
+</jasperReport>

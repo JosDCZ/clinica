@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.5.final using JasperReports Library version 6.20.5-3efcf2e67f959db3888d79f73dde2dbd7acb4f8e  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="pacienteEspecialidadRep" pageWidth="792" pageHeight="612" orientation="Landscape" columnWidth="752" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7b1db6a5-4e98-4d80-96a9-93fe86f535c4">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DataAdapterClinica"/>
+
+	<parameter name="ImgLogo" class="java.io.InputStream"/>
+
+	<queryString language="SQL">
+	</queryString>
+	<field name="nombreEspecialidad" class="java.lang.String"/>
+	<field name="cantidadpacientes" class="java.lang.Long"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="81" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="750" height="81" forecolor="#D1454E" backcolor="#D1454E" uuid="5460d00f-26f3-48c1-b433-5522f9d6c468"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="0" width="750" height="50" forecolor="#FFFFFF" uuid="a4d292e2-262f-4f8c-9819-0840a14b7332"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Clinica Medica Bienestar Universitario]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="50" width="750" height="30" forecolor="#FFFFFF" uuid="8059d39d-bc59-496b-b58e-038f74e0a108"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Final avinidad Cresencio Castellanos contigo a Cruz Roja]]></text>
+			</staticText>
+			<image>
+				<reportElement x="691" y="17" width="50" height="50" uuid="08cd1078-9634-43b4-9daa-e1bdd174926d"/>
+				<imageExpression><![CDATA[$P{ImgLogo}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="29" splitType="Stretch">
+			<staticText>
+				<reportElement x="100" y="-1" width="552" height="30" forecolor="#030000" uuid="38ce5282-bf20-4b89-8f86-c71437e76232"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Reporte de pacientes]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="31" splitType="Stretch">
+			<staticText>
+				<reportElement x="380" y="0" width="371" height="30" uuid="2a1b56d8-ef76-4177-8726-3c01702d4f8d"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Pacientes]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="380" height="30" uuid="ec0ed383-27ae-4b0e-a86d-7f1e7e06df4e"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Identificacion]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="32" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="-1" width="380" height="30" uuid="31aecee0-ee52-434d-8933-56c7ae7a23be"/>
+				<textFieldExpression><![CDATA[$F{nombreEspecialidad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="380" y="-1" width="371" height="30" uuid="0cd76742-24eb-409c-a9b1-af786459859b"/>
+				<textFieldExpression><![CDATA[$F{cantidadpacientes}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="0" y="0" width="100" height="30" uuid="9fd3b496-4d4f-42b4-8140-a2c7c2ad7c2d"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField pattern="HH:mm">
+				<reportElement x="140" y="0" width="100" height="30" uuid="c898ce2f-52d6-4a9e-a479-778c2949de29"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="552" y="0" width="100" height="30" uuid="6adc2c55-5b30-490f-b3b7-99198086599a"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="652" y="0" width="100" height="30" uuid="8b0b76ef-d86e-4bbb-af84-007d7b519e9f"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[" of " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="265" splitType="Stretch">
+			<lineChart>
+				<chart evaluationTime="Report">
+					<reportElement x="0" y="0" width="752" height="265" uuid="664c1c90-5eb9-4a15-ad6c-55ab9cbb2210"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<categoryDataset>
+					<categorySeries>
+						<seriesExpression><![CDATA[$F{nombreEspecialidad}]]></seriesExpression>
+						<categoryExpression><![CDATA[$F{nombreEspecialidad}]]></categoryExpression>
+						<valueExpression><![CDATA[$F{cantidadpacientes}]]></valueExpression>
+						<labelExpression><![CDATA[$F{nombreEspecialidad}]]></labelExpression>
+					</categorySeries>
+				</categoryDataset>
+				<linePlot>
+					<plot/>
+					<categoryAxisFormat>
+						<axisFormat labelColor="#000000" tickLabelColor="#000000" axisLineColor="#000000"/>
+					</categoryAxisFormat>
+					<valueAxisFormat>
+						<axisFormat labelColor="#000000" tickLabelColor="#000000" axisLineColor="#000000"/>
+					</valueAxisFormat>
+				</linePlot>
+			</lineChart>
+		</band>
+	</summary>
+</jasperReport>
